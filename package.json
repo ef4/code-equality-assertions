@@ -87,6 +87,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.19.6",
+    "@babel/plugin-syntax-typescript": "^7.24.1",
     "diff": "^5.1.0",
     "prettier": "^2.7.1"
   },

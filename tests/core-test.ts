@@ -6,6 +6,9 @@ module("core", () => {
   const examples = [
     [`console.log('hello')`, `console.log("hello");`],
     [`const result = { ...content }?.[0].content`, `const result = { \n...content\n }?.[0].content`],
+    [`function x(message: string): string { return message + "!" }`, `function x(message: string): string { 
+      return message + '!' 
+    }`]
   ];
 
   for (let [left, right] of examples) {
