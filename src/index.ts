@@ -2,9 +2,11 @@ import { createPatch } from "diff";
 import prettier from "prettier";
 import parser from "prettier/parser-babel.js";
 import * as babel from '@babel/core';
+// @ts-expect-error no upstream types
+import TSSyntax from '@babel/plugin-syntax-typescript';
 
 function standardize(code: string): string {
-  return prettier.format(babel.transform(code, {babelrc: false })!.code!, { parser: "babel", plugins: [parser]});
+  return prettier.format(babel.transform(code, {babelrc: false, configFile: false, plugins: [TSSyntax] })!.code!, { parser: "babel", plugins: [parser]});
 }
 
 export function codeEqual(
